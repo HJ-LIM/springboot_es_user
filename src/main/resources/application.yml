@@ -1,0 +1,12 @@
+server.port: 9090
+
+spring.mvc.view.prefix: /WEB-INF/layout/
+spring.mvc.view.suffix: .jsp
+
+restTemplate:
+  factory:
+    readTimeout: 5000
+    connectTimeout: 3000
+  httpClient:
+    maxConnTotal: 100
+    maxConnPerRoute: 5
