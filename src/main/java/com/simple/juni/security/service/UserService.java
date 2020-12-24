@@ -2,11 +2,19 @@ package com.simple.juni.security.service;
 
 import org.springframework.stereotype.Service;
 
+import com.simple.juni.security.dao.UserDao;
 import com.simple.juni.security.domain.bean.User;
 
 @Service
 public class UserService {
-	public User getUser(String userId){
-		return new User(userId);
+
+	final UserDao userDao;
+
+	public UserService(UserDao userDao) {
+		this.userDao = userDao;
+	}
+
+	public User getUser(String userId) throws Exception {
+		return userDao.getUser(userId);
 	}
 }

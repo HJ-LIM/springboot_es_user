@@ -1,0 +1,14 @@
+{
+  "properties": [
+    {
+      "name": "elasticsearch.remote.server",
+      "type": "java.lang.String",
+      "description": "Description for elasticsearch.remote.server."
+    },
+    {
+      "name": "elasticsearch.remote.port",
+      "type": "java.lang.String",
+      "description": "Description for elasticsearch.remote.port."
+    }
+  ]
+}

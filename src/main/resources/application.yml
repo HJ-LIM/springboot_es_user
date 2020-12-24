@@ -10,3 +10,18 @@ restTemplate:
   httpClient:
     maxConnTotal: 100
     maxConnPerRoute: 5
+
+elasticsearch:
+  remote:
+    cluster:
+      name: drms
+    server: 10.10.0.242
+    port: 19300
+
+logging:
+  level:
+    root: warn
+    com:
+      simple:
+        juni:
+          elasticsearch: info

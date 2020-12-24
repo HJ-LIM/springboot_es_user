@@ -6,9 +6,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication(
 	scanBasePackages = {
 		"com.simple.juni.restful",
+		"com.simple.juni.elasticsearch",
 		"com.simple.juni.controller",
-		"com.simple.juni.security.controller",
-		"com.simple.juni.security.service"
+		"com.simple.juni.security"
+		// "com.simple.juni.test.constroctor"
 	})
 public class SpringBootRunApplication {
 

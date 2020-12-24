@@ -26,7 +26,7 @@ public class UserController {
 	@GetMapping(value = "/getUser.json")
 	public void findUser(
 		@RequestParam(value="userId",required=true) String userId,
-		ModelMap model){
+		ModelMap model) throws Exception {
 
 		model.put("result" , userService.getUser(userId));
 	}

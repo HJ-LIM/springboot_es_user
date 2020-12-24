@@ -1,12 +1,13 @@
 package com.simple.juni.security.domain.bean;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
-@AllArgsConstructor
+@RequiredArgsConstructor
 @Getter
 @Setter
 public class User {
-	private String _id;
+	private final String _id;
+	private String name;
 }
