@@ -1,11 +1,8 @@
 
-# README
+# Elastic search remote test
 
-Spring boot\
-Gradle build\
-심플 버전. 
-
-기본 jsp 세팅
+Spring boot v2.4.1
+Gradle v6.7.1
 
 ## port
 9090
