@@ -10,10 +10,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 		"com.simple.juni.security.controller",
 		"com.simple.juni.security.service"
 	})
-public class JuniApplication {
+public class SpringBootRunApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(JuniApplication.class, args);
+		SpringApplication.run(SpringBootRunApplication.class, args);
 	}
 
 }
