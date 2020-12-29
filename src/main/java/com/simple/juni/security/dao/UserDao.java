@@ -1,12 +1,16 @@
 package com.simple.juni.security.dao;
 
+import java.util.List;
+
 import org.elasticsearch.action.ListenableActionFuture;
 import org.elasticsearch.action.get.GetRequestBuilder;
 import org.elasticsearch.action.get.GetResponse;
 import org.springframework.stereotype.Repository;
 
+import com.google.gson.Gson;
 import com.simple.juni.elasticsearch.ElasticSearcher;
 import com.simple.juni.security.domain.bean.User;
+
 
 @Repository
 public class UserDao {
@@ -16,12 +20,20 @@ public class UserDao {
 		this.store = store;
 	}
 
-	public User getUser(String userId){
+	public User loadUser(String userId){
 		GetRequestBuilder prepareGet = store.getClient().prepareGet("tis", "user", userId);
 		ListenableActionFuture<GetResponse> response = prepareGet.execute();
 		GetResponse getFields = response.actionGet();
-		System.out.println(getFields);
-		return new User(userId);
+
+		Gson gson = new Gson();
+		User user = gson.fromJson(getFields.getSourceAsString(), User.class);
+		user.set_id(getFields.getId());
+		user.printJSON();
+		return user;
 	}
 
+	public List<User> loadAllUsers() {
+		//TODO : Simple Searcher 만들기
+		return null;
+	}
 }

@@ -1,5 +1,7 @@
 package com.simple.juni.security.service;
 
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.simple.juni.security.dao.UserDao;
@@ -14,7 +16,11 @@ public class UserService {
 		this.userDao = userDao;
 	}
 
-	public User getUser(String userId) throws Exception {
-		return userDao.getUser(userId);
+	public User loadUser(String userId) throws Exception {
+		return userDao.loadUser(userId);
+	}
+
+	public List<User> loadAllUsers(){
+		return userDao.loadAllUsers();
 	}
 }
