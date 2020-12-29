@@ -8,7 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 		"com.simple.juni.restful",
 		"com.simple.juni.elasticsearch",
 		"com.simple.juni.controller",
-		"com.simple.juni.security"
+		"com.simple.juni.security",
+		"com.simple.juni.core.config"
 		// "com.simple.juni.test.constroctor"
 	})
 public class SpringBootRunApplication {

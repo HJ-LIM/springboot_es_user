@@ -8,7 +8,8 @@ public class IndexController {
 
 	@GetMapping("/")
 	public String root(){
-		return "redirect:/index.do";
+		// return "redirect:/index.do";
+		return "redirect:/swagger-ui.html";
 	}
 
 	@GetMapping("/index.do")
