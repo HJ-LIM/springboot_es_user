@@ -6,17 +6,18 @@ import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 
 import org.elasticsearch.client.Client;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.io.DefaultResourceLoader;
 import org.springframework.stereotype.Component;
 
 import lombok.extern.slf4j.Slf4j;
 
 @Component
 @Slf4j
-public class ElasticSearcher extends DefaultResourceLoader{
-	@Autowired
-	private ElasticSearchClient esClient;
+public class ElasticSearcher{
+	private final ElasticSearchClient esClient;
+
+	public ElasticSearcher(ElasticSearchClient esClient) {
+		this.esClient = esClient;
+	}
 
 	@PostConstruct
 	public void start() {

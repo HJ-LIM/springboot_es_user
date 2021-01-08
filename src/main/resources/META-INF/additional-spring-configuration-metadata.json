@@ -9,6 +9,11 @@
       "name": "elasticsearch.remote.port",
       "type": "java.lang.String",
       "description": "Description for elasticsearch.remote.port."
+    },
+    {
+      "name": "restTemplate.factory.readTimeout",
+      "type": "java.lang.String",
+      "description": "Description for restTemplate.factory.readTimeout."
     }
   ]
 }

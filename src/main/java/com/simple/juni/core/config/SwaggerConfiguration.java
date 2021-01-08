@@ -30,8 +30,6 @@ public class SwaggerConfiguration {
 			.useDefaultResponseMessages(false); // 기본으로 세팅되는 200,401,403,404 메시지를 표시 하지 않음
 	}
 
-
-
 	private ApiInfo swaggerInfo(String title) {
 		return new ApiInfoBuilder().title("Spring API Documentation")
 			.description("Elastic Search 1.6 리모트를 통한 TEST 진행시 사용되는 API에 대한 연동 문서입니다")

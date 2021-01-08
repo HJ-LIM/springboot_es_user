@@ -13,7 +13,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 		// "com.simple.juni.test.constroctor"
 	})
 public class SpringBootRunApplication {
-
 	public static void main(String[] args) {
 		SpringApplication.run(SpringBootRunApplication.class, args);
 	}

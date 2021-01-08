@@ -9,11 +9,14 @@ import org.springframework.stereotype.Repository;
 
 import com.google.gson.Gson;
 import com.simple.juni.elasticsearch.ElasticSearcher;
+import com.simple.juni.security.domain.Env;
 import com.simple.juni.security.domain.bean.User;
 
 
 @Repository
 public class UserDao {
+	private final String TYPE = "user";
+
 	final ElasticSearcher store;
 
 	public UserDao(ElasticSearcher store) {
@@ -21,14 +24,13 @@ public class UserDao {
 	}
 
 	public User loadUser(String userId){
-		GetRequestBuilder prepareGet = store.getClient().prepareGet("tis", "user", userId);
+		GetRequestBuilder prepareGet = store.getClient().prepareGet(Env.ES_INDEX, TYPE, userId);
 		ListenableActionFuture<GetResponse> response = prepareGet.execute();
 		GetResponse getFields = response.actionGet();
 
 		Gson gson = new Gson();
 		User user = gson.fromJson(getFields.getSourceAsString(), User.class);
 		user.set_id(getFields.getId());
-		user.printJSON();
 		return user;
 	}
 

@@ -2,6 +2,7 @@ package com.simple.juni.security.domain.bean;
 
 import net.sf.json.JSONObject;
 
+import com.simple.juni.security.domain.SimplePrint;
 import com.simple.juni.security.domain.enums.CBL_TYPE;
 import com.simple.juni.security.domain.enums.CLIENT_TYPE;
 import com.simple.juni.security.domain.enums.ELECTRIC_CHARGE_TYPE;
@@ -15,7 +16,7 @@ import lombok.Setter;
 @RequiredArgsConstructor
 @Getter
 @Setter
-public class User {
+public class User extends SimplePrint {
 	private @NonNull String _id;
 	private String companyName;								//참여고객 명
 	private String custNo;									// 고객번호 == 공급지점 특정번호
@@ -75,8 +76,4 @@ public class User {
 	private String cidr;									// 허용 IP 주소 (CIDR)
 	private String subLoginId;								// 추가 로그인 ID
 	private int errorCount = 1;								// 로그인 실패 횟수
-
-	public void printJSON(){
-		System.out.println(JSONObject.fromObject(this).toString(4));
-	}
 }
