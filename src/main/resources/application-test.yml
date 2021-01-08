@@ -2,13 +2,13 @@ server:
   port: 9090
 
 spring:
-  profiles: local
+  profiles: test
   mvc:
     view:
       prefix: /WEB-INF/layout/
       suffix: .jsp
 notification:
-  run: Run Local!!
+  run: Run Test!!
 
 restTemplate:
   factory:
