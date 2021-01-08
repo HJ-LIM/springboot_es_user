@@ -1,24 +1,29 @@
 ---
 name: Issue template
 about: Describe this issue template's purpose here.
-title: "[BUG]"
+title: '[BUG]'
 labels: ''
 assignees: HJ-LIM
-
 ---
 
+# issue-template
+
 ## No.
+
 Project-001
 
 ## Title
+
 You can use one `#` all the way up to `######` six for different heading sizes.
 
-If you'd like to quote someone, use the > character before the line:
+If you'd like to quote someone, use the &gt; character before the line:
 
 > Coffee. The finest organic suspension ever devised... I beat the Borg with it.
-> - Captain Janeway
+>
+> * Captain Janeway
 
 ## Story Point
+
 3
 
 ## Desceript
@@ -26,13 +31,16 @@ If you'd like to quote someone, use the > character before the line:
 Issue template test
 
 ## CheckList
-- [x] sub title 1
-- [x] sub title 2
-- [ ] sub title 1
+
+* [x] sub title 1
+* [x] sub title 2
+* [ ] sub title 1
 
 ## Code
-```
+
+```text
 if (isAwesome){
   return true
 }
 ```
+
