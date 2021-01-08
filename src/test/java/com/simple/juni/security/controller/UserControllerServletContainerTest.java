@@ -36,7 +36,7 @@ class UserControllerServletContainerTest {
 
 	@Test
 	public void hello2() throws Exception {
-		when(userService.getUser("juni")).thenReturn(new User("juni"));
+		when(userService.loadUser("juni")).thenReturn(new User("juni"));
 
 		String result = testRestTemplate.getForObject("/user/hello.json", String.class);
 		assertThat(result).isEqualTo("hello");
