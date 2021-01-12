@@ -42,7 +42,7 @@ public class UserController {
 	}
 
 	@GetMapping(value = "/users")
-	public List<User> allUsers(){
-		return Collections.emptyList();
+	public List<User> allUsers() throws Exception {
+		return userService.loadAllUsers();
 	}
 }

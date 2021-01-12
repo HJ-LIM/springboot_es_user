@@ -20,7 +20,7 @@ public class UserService {
 		return userDao.loadUser(userId);
 	}
 
-	public List<User> loadAllUsers(){
+	public List<User> loadAllUsers() throws Exception {
 		return userDao.loadAllUsers();
 	}
 }

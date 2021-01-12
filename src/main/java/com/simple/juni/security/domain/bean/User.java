@@ -1,12 +1,10 @@
 package com.simple.juni.security.domain.bean;
 
-import net.sf.json.JSONObject;
-
 import com.simple.juni.security.domain.SimplePrint;
-import com.simple.juni.security.domain.enums.CBL_TYPE;
-import com.simple.juni.security.domain.enums.CLIENT_TYPE;
-import com.simple.juni.security.domain.enums.ELECTRIC_CHARGE_TYPE;
-import com.simple.juni.security.domain.enums.FETCH_TYPE;
+import com.simple.juni.security.domain.enums.CBLType;
+import com.simple.juni.security.domain.enums.ClientType;
+import com.simple.juni.security.domain.enums.ElectricChargeType;
+import com.simple.juni.security.domain.enums.FetchType;
 
 import lombok.Getter;
 import lombok.NonNull;
@@ -22,14 +20,14 @@ public class User extends SimplePrint {
 	private String custNo;									// 고객번호 == 공급지점 특정번호
 	private String custNoPassword;							// 고객번호 비밀번호
 	private String rId; 									// gateway sequential no
-	private CLIENT_TYPE clientType = CLIENT_TYPE.none;		// gateway client type
+	private ClientType clientType = ClientType.NONE;		// gateway client type
 	private String dResourceId;								// demand resource Id
 	private String dResourceGroupId;
 	private boolean economicDR;								// Verifies the existence of a economic DR
 	private boolean reliableDR;								// Verifies the existence of a reliable DR
 															// Electric charge type
-	private ELECTRIC_CHARGE_TYPE chargeType = ELECTRIC_CHARGE_TYPE.business;
-	private CBL_TYPE cblType = CBL_TYPE.max;				// CBL based load type
+	private ElectricChargeType chargeType = ElectricChargeType.BUSINESS;
+	private CBLType cblType = CBLType.MAX;				// CBL based load type
 	private boolean cblSaa = true;							// Verifies the existence of a CBL SAA
 	private String timeZone;
 	private String timeZoneDisplay;
@@ -39,7 +37,7 @@ public class User extends SimplePrint {
 	private long registeredInDemand = System.currentTimeMillis();
 	private boolean isDeleted = false;						// 중지여부
 	private boolean isIncludedSettlement = true;			// 정산 참여 여부
-	private FETCH_TYPE fetchType = FETCH_TYPE.kepcoapi;
+	private FetchType fetchType = FetchType.KEPCO_API;
 	private int contractIng;								// contractIng
 	private String numberOfSPI;								//공급지점 특정번호
 
