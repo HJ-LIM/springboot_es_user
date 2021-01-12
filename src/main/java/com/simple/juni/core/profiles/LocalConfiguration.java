@@ -1,4 +1,4 @@
-package com.simple.juni.core.config;
+package com.simple.juni.core.profiles;
 
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
@@ -11,14 +11,14 @@ import lombok.extern.slf4j.Slf4j;
 
 @Configuration
 @EnableCaching
-@Profile("test")
-@PropertySource("/application-test.yml")
+@Profile("local")
+@PropertySource("/application.yml")
 @Slf4j
-public class TestConfiguration {
+public class LocalConfiguration {
 
 	final Environment environment;
 
-	public TestConfiguration(Environment environment) {
+	public LocalConfiguration(Environment environment) {
 		this.environment = environment;
 	}
 
