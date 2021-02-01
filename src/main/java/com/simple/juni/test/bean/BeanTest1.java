@@ -8,11 +8,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class BeanTest1 {
 
-	@Autowired
-	BeanTest3 beanTest3;
+	final BeanTest3 beanTest3;
 
-	public BeanTest1() {
+	public BeanTest1(BeanTest3 beanTest3) {
 		System.out.println("BeanTest1 생성");
+		this.beanTest3 = beanTest3;
 	}
 
 	@PostConstruct

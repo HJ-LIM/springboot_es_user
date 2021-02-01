@@ -46,6 +46,8 @@ dependencies {
     compile 'commons-io:commons-io:1.4'
     compile 'commons-lang:commons-lang:2.6'
     compile 'org.slf4j:slf4j-api:1.7.16'
+    compile 'org.apache.poi:poi:4.1.2'
+    compile 'org.apache.poi:poi-ooxml:4.1.2'
 
     implementation 'com.google.code.gson:gson:2.8.1'
     compile 'net.sf.json-lib:json-lib:2.4:jdk15'

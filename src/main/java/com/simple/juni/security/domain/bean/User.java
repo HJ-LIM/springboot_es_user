@@ -1,5 +1,8 @@
 package com.simple.juni.security.domain.bean;
 
+import com.simple.juni.excel.ExcelColumn;
+import com.simple.juni.excel.style.BlueHeaderStyle;
+import com.simple.juni.excel.style.ExcelColumnStyle;
 import com.simple.juni.security.domain.SimplePrint;
 import com.simple.juni.security.domain.enums.CBLType;
 import com.simple.juni.security.domain.enums.ClientType;
@@ -15,12 +18,20 @@ import lombok.Setter;
 @Getter
 @Setter
 public class User extends SimplePrint {
+	@ExcelColumn(
+		order = 0,
+		headerName = "ID",
+		headerStyle = @ExcelColumnStyle(excelCellStyleClass = BlueHeaderStyle.class)
+	)
 	private @NonNull String _id;
+	@ExcelColumn(order = 1, headerName = "이름")
 	private String companyName;								//참여고객 명
+	@ExcelColumn(order = 2, headerName = "고객번호")
 	private String custNo;									// 고객번호 == 공급지점 특정번호
 	private String custNoPassword;							// 고객번호 비밀번호
 	private String rId; 									// gateway sequential no
 	private ClientType clientType = ClientType.NONE;		// gateway client type
+	@ExcelColumn(order = 3, headerName = "자원ID")
 	private String dResourceId;								// demand resource Id
 	private String dResourceGroupId;
 	private boolean economicDR;								// Verifies the existence of a economic DR
@@ -49,8 +60,11 @@ public class User extends SimplePrint {
 	private float rrmse30days;
 	private float rrmseOnlyTheDay;
 	private long contract_active_period;					// time to reduction
+	@ExcelColumn(order = 4, headerName = "계약 용량")
 	private double capacity;								// 계약용량
+	@ExcelColumn(order = 5, headerName = "계약 시작")
 	private long contractFrom;								// 계약 시작
+	@ExcelColumn(order = 6, headerName = "계약 종료")
 	private long contractTo;								// 계약 종료
 	private long endowmentRate;								// 기본금
 	private long ePCRate; 									// 경제성 실적금 분배율

@@ -9,8 +9,6 @@ package com.simple.juni.security.service;
  * intended publication of such software.
  */
 
-import java.io.IOException;
-
 import org.elasticsearch.action.ActionFuture;
 import org.elasticsearch.action.ListenableActionFuture;
 import org.elasticsearch.action.bulk.BulkRequestBuilder;
@@ -165,7 +163,8 @@ public class SimpleSearcher {
 		return search(query, null, index, types, fields);
 	}
 
-	public SearchResponse search(ESQuery query, FacetBuilder facet, String index, String[] types, String[] fields) throws Exception {
+	public SearchResponse search(ESQuery query, FacetBuilder facet, String index, String[] types, String[] fields) throws
+		Exception {
 		SearchSourceBuilder sb = SearchSourceBuilder.searchSource();
 
 		if (query.getAggRangeBuilders() != null){
@@ -218,12 +217,7 @@ public class SimpleSearcher {
 
 		searchRequest.source(sb);
 		ActionFuture<SearchResponse> response = getClient().search(searchRequest);
-		SearchResponse searchResponse;
-		try {
-			searchResponse = response.get();
-		} catch (Exception e) {
-			throw new Exception(e);
-		}
+		SearchResponse searchResponse = response.get();
 
 		SearcherUtils.printSearchResult(searchResponse, sb.toString());
 
